@@ -1,1 +1,8 @@
-<iframe src="{{ instance.src }}" width="880" height="440" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe
+ src="{{ instance.src }}"
+ {% if instance.width %}width="{{ instance.width }}"{% endif %}
+ {% if instance.height %}height="{{ instance.height }}"{% endif %}
+ frameborder="0"
+ webkitallowfullscreen mozallowfullscreen allowfullscreen
+ style="{% if not instance.width %}width:100%;{% endif %}{% if not instance.height %}height:100%;{% endif %}"
+ ></iframe>
